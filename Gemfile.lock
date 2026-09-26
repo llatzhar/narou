@@ -53,6 +53,7 @@ GEM
     erubis (2.7.0)
     ffi (1.17.1)
     ffi (1.17.1-java)
+    ffi (1.17.1-x64-mingw-ucrt)
     ffi (1.17.1-x64-mingw32)
     haml (5.2.2)
       temple (>= 0.8.0)
@@ -151,6 +152,7 @@ GEM
 PLATFORMS
   java
   ruby
+  x64-mingw-ucrt
   x64-mingw32
 
 DEPENDENCIES
@@ -165,4 +167,4 @@ DEPENDENCIES
   timecop (~> 0.9)
 
 BUNDLED WITH
-   2.2.22
+  4.0.6
