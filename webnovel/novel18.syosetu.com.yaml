@@ -15,24 +15,21 @@ sitename: |-
   <dt class="p-infotop-data__title">掲載サイト</dt>
   <dd class="p-infotop-data__value">(?<sitename>.+?)\(.+\)</dd>
 
-version: 2.2
+version: 2.3
 
 # ------------------------------------------------------------
 # 目次取得設定
 toc_url: https://\\k<domain>/\\k<ncode>/
 subtitles: |-
-  (?:<div class="p-eplist__chapter-title">(?<chapter>.+?)</div>
-  
+  (?:<div class="p-eplist__chapter-title">(?<chapter>.+?)</div>\s*
   )?<div class="p-eplist__sublist">
   <a href="(?<href>/.+?/(?<index>\d+?)/)" class="p-eplist__subtitle">
   (?<subtitle>.+?)
-  </a>
-  
+  </a>\s*
   <div class="p-eplist__update">
   (?:<span class="p-eplist__favep">.+?</span></span>)?(?<subdate>.+?)
-  (?:<span title="(?<subupdate>.+?) 改稿">（<u>改</u>）</span>
-  )?</div>
-  </div>
+  (?:<span title="(?<subupdate>.+?) 改稿">（<u>改</u>）</span>\s*)?</div>\s*</div>
+
 next_toc: <a href="/(?<next_page>[^"]+)" class="c-pager__item c-pager__item--next">
 next_url: https://\\k<domain>/\\k<next_page>
 # 最大のページ数を得る。固定の数字でも可。
@@ -66,10 +63,7 @@ narou_api_url: https://api.syosetu.com/novel18api/api/
 novel_info_url: \\k<top_url>/novelview/infotop/ncode/\\k<ncode>/
 
 # タイトル
-t: |-
-  <h1 class="p-infotop-title">
-  <a href=".+?">(?<title>.+?)</a>
-  </h1>
+t: <h1 class="p-infotop-title">\s<a href=".+?">(?<title>.+?)</a>\s</h1>
 
 # novel_type 小説種別
 nt: <span class="p-infotop-type__type(?:.*?)">(?<novel_type>.+?)</span>
@@ -82,9 +76,7 @@ novel_type_string:
 ga: <span class="p-infotop-type__allep">全(?<general_all_no>\d+)エピソード
 
 # story あらすじ
-s:  |-
-  <dt class="p-infotop-data__title">あらすじ</dt>
-  <dd class="p-infotop-data__value">(?<story>.+?)</dd>
+s: <dt class="p-infotop-data__title">あらすじ</dt>\s<dd class="p-infotop-data__value">(?<story>.+?)</dd>
 
 # general_firstup 初回掲載日
 gf: |-
